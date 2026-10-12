@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { HERO } from '@/constants/landing';
+import { IMAGES } from '@/constants/images';
 
 export function HeroSection() {
   return (
@@ -7,8 +9,16 @@ export function HeroSection() {
       className="relative flex min-h-[90svh] items-center overflow-hidden bg-inverse-surface pt-0"
       aria-label="Hero"
     >
-      {/* Placeholder de imagen — reemplazar con next/image real */}
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-primary/80 to-primary-container/60" aria-hidden />
+      <Image
+        src={IMAGES.heroBg}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-on-surface/60" aria-hidden />
 
       <div className="relative z-10 mx-auto w-full max-w-[var(--container-max)] px-margin-mobile md:px-margin-desktop">
         <div className="max-w-2xl">

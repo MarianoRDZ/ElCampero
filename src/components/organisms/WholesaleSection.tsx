@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 import { WHOLESALE } from '@/constants/landing';
+import { IMAGES } from '@/constants/images';
 
 export function WholesaleSection() {
   return (
@@ -38,9 +40,15 @@ export function WholesaleSection() {
           </Link>
         </div>
 
-        {/* Placeholder imagen — reemplazar con next/image real */}
-        <div className="relative h-[400px] overflow-hidden rounded-xl bg-primary-container/20 lg:h-[500px]" aria-hidden>
-          <div className="absolute inset-0 bg-gradient-to-t from-on-surface/60 to-transparent" />
+        <div className="relative h-[400px] overflow-hidden rounded-xl lg:h-[500px]">
+          <Image
+            src={IMAGES.wholesale}
+            alt="Taller de fabricación de sets de asado El Campero"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent" aria-hidden />
         </div>
 
       </div>

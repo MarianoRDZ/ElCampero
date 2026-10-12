@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import { ABOUT } from '@/constants/landing';
+import { IMAGES } from '@/constants/images';
 
 export function AboutSection() {
   return (
@@ -8,9 +10,16 @@ export function AboutSection() {
     >
       <div className="mx-auto grid max-w-[var(--container-max)] grid-cols-1 items-center gap-stack-xl px-margin-mobile md:grid-cols-2 md:px-margin-desktop">
 
-        {/* Imagen placeholder — reemplazar con next/image real */}
         <div className="relative order-2 md:order-1">
-          <div className="mx-auto h-[380px] max-w-md rounded-xl bg-surface-container shadow-card" aria-hidden />
+          <div className="relative mx-auto h-[380px] max-w-md overflow-hidden rounded-xl shadow-card">
+            <Image
+              src={IMAGES.about}
+              alt="Artesano trabajando en un set de asado El Campero"
+              fill
+              sizes="(max-width: 768px) 100vw, 448px"
+              className="object-cover object-center"
+            />
+          </div>
           <div className="absolute -bottom-6 -right-4 hidden rounded-lg bg-primary-container p-8 lg:block">
             <p className="font-serif text-headline-sm font-medium italic text-on-primary">
               {ABOUT.quote}
