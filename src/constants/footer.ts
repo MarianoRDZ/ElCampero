@@ -14,7 +14,7 @@ export const FOOTER_COLUMNS = [
 ] as const;
 
 export const FOOTER_SOCIAL = [
-  { label: 'Instagram', href: '#' },
+  { label: 'Instagram', href: 'https://www.instagram.com/elcampero.ar' },
   { label: 'Facebook',  href: '#' },
   { label: 'WhatsApp',  href: '#' },
 ];
