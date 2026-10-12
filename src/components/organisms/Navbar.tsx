@@ -33,14 +33,30 @@ export function Navbar() {
           aria-label="Navegación principal"
           className="mx-auto flex h-16 max-w-[var(--container-max)] items-center justify-between px-margin-mobile md:px-margin-desktop"
         >
-          <Link
-            href="/"
-            aria-label="El Campero — inicio"
-            className="font-serif text-xl font-medium text-on-surface"
-          >
-            El Campero
-          </Link>
+          {/* Izquierda: hamburger (mobile) + logo */}
+          <div className="flex items-center gap-3">
+            <button
+              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              onClick={() => setIsOpen((prev) => !prev)}
+              className="text-on-surface md:hidden"
+            >
+              {isOpen
+                ? <X    size={22} strokeWidth={2} aria-hidden />
+                : <Menu size={22} strokeWidth={2} aria-hidden />}
+            </button>
 
+            <Link
+              href="/"
+              aria-label="El Campero — inicio"
+              className="font-serif text-xl font-medium tracking-wider text-on-surface"
+            >
+              El Campero
+            </Link>
+          </div>
+
+          {/* Centro: links desktop */}
           <ul className="hidden items-center gap-8 md:flex" role="list">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={href}>
@@ -49,7 +65,7 @@ export function Navbar() {
                   className={cn(
                     'text-label-lg font-semibold tracking-label transition-colors duration-300 ease-out',
                     pathname === href
-                      ? 'text-primary-container'
+                      ? 'text-primary'
                       : 'text-on-surface-variant hover:text-on-surface',
                   )}
                 >
@@ -59,30 +75,18 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-3">
-            <Link
-              href="/carrito"
-              aria-label="Ver carrito"
-              className="relative text-on-surface transition-colors duration-300 ease-out hover:text-primary-container"
-            >
-              <ShoppingBag size={22} strokeWidth={1.5} aria-hidden />
-            </Link>
-
-            <button
-              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-              onClick={() => setIsOpen((prev) => !prev)}
-              className="text-on-surface transition-colors duration-300 ease-out hover:text-primary-container md:hidden"
-            >
-              {isOpen
-                ? <X    size={22} strokeWidth={1.5} aria-hidden />
-                : <Menu size={22} strokeWidth={1.5} aria-hidden />}
-            </button>
-          </div>
+          {/* Derecha: carrito */}
+          <Link
+            href="/carrito"
+            aria-label="Ver carrito"
+            className="text-on-surface transition-colors duration-300 ease-out hover:text-primary"
+          >
+            <ShoppingBag size={22} strokeWidth={1.5} aria-hidden />
+          </Link>
         </nav>
       </header>
 
+      {/* Menú mobile */}
       <div
         id="mobile-menu"
         aria-hidden={!isOpen}
@@ -106,8 +110,8 @@ export function Navbar() {
                   'font-serif text-headline-sm font-medium',
                   'transition-colors duration-300 ease-out',
                   pathname === href
-                    ? 'text-primary-container'
-                    : 'text-on-surface hover:text-primary-container',
+                    ? 'text-primary'
+                    : 'text-on-surface hover:text-primary',
                 )}
               >
                 {label}
