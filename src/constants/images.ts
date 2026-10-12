@@ -1,18 +1,9 @@
-const BASE = 'https://lh3.googleusercontent.com/aida-public';
-
 export const IMAGES = {
-  heroBg:
-    `${BASE}/AB6AXuAtZXhYTbsNlkooRBZCgzzQEehiNHjo1ivih4bA4OFdHhDxF6K3j6u67LaP5vmEH-8ZzuUTgfGezS5EBwDlVotS_8tpM3Jah5uZTRvPs3OB8EAMF0Gr2LPSrIbQneCyr5dKPhsYK56W9vyiJkAnirofY9qpkumzqy4jIWNfdp0U5mc3dmqLFRNwgNwPZ2ThkelFtWeUerl7d7hISjtzrHQy1uIZhf7TsyOEVPkfXk1pqX5pyb35hu6rFrrCpAYw-kXFBtsY71CGLX2u`,
-  product1:
-    `${BASE}/AB6AXuD-dnzOzf4x8X-W_wlI2YSQ61wSWc88XIlgP8rxCsojzmC_NQACZMIdGDxykLs1c9H5mfMQ7-b03rJcUP2HrDXWxWR_siyhCZ4qeqHhcJoWetRHk1jgLdX9KhHroAR3e_Ww9Z9ExET3HZRf01Cobw8Pi_2mpnN_WRNoeR33-U1MQaDyKy6w-r2YHa3ZH-jNAv4u-V7ZQoFcFbowCFqOpMZJvqLfdgRF3aXxWStlQPvFCfUxCf6RIpt_MMfD4yswGTqKnigMjTVV2r10`,
-  product2:
-    `${BASE}/AB6AXuBlmRZGZdA3GN-iiqUguer7Xli0BM-_Fv1MCHCM15ulO_bq40XV3sUC5uTPHs4uxa46EqGL9r5sny-aAB8xjh-EfF4c-4_NX7SvK6AniHw-g0QsqhP3B-X-JqV3-T4b22oRozEqqBpLHbb3G-1g6A2rkJb2N-714T-BFlrctKRwdyV04RpxZAt__c7Ct7pbDdl0eG4DEv_xVLLn_iS6cOC2O6L23ULH3FKEymZ20kj3ygZQnya5axWCVyfKyo0QyIhj0zXPK6QIC4RQ`,
-  product3:
-    `${BASE}/AB6AXuA_4laKPy6oPFzAljLNH7Tpj7lMAd4W9hiHmtxE15Zn8oDTvQRzcUC8b0z9azwGaPmoehvd2bfQfOxAEHUeqySuEO1yzqpKqpW_QBFm_pu_ieSLZPGdEBjArk57AE_3skl9hOCuiE8Qe4nUFNQD6MCazWq-VcTczvlgxaCfWo6OdDV17pyLCI7P7n_jBqfxbyKZpeuB_Ifpw9XTGHzGTPh0EOO65tEbI9Hao3zSIi6hvpaF1WUH6_q-eT25MlO-oihuRYy5mS2XEry1`,
-  product4:
-    `${BASE}/AB6AXuDYhSLxwixRi1rKATJAx-hAAL1Hq_3fSnsM4gET9QyX206WhMwGHX1xESI3egmtK8uAX-aYIMPHzYwQ9H2YyqXDdSDJL7NEbKIOdYfkC5M93ZkGweCK2FDLsiwsxU0dZXRL0bjvB6pvAELb_wBqu5TpXs2gnBR-ofNJaF-SPfN1V5YdJzhnm5w1LOf-iRPTM4gkAkuIYtLphu8kPyKwrthBbuNpdFrJcT3mIjXY4mm9X7p_-T7Tt6ncVBoao0-nlYvKovKlU_1h_inba`,
-  wholesale:
-    `${BASE}/AB6AXuCAsTFk2000IYKEchvDuR8dS6DsceGx1S-jv6TS9lbyyYf4izyIkDG7sTJM1QZCDLQaa7O_c5ZEQvA0AwLj6ntTE9JRa4tYJ8qKuthdtB_Whei8x47IdaoZCAXbFjjA_MMKG8n_3MXHsYQLWkN5_rkYZljKsZzMxC2rg8rHyxcKiDZOTgXyEzaC3WtW2DYh7Tkh2OdVWKollsh_ogJkiZE9r74JT_7Pf9Y2xrLxambuNER9uTT7w-Y4TqKmrofB6f_940DhRChj1j0Q`,
-  about:
-    `${BASE}/AB6AXuCSB0XFREmsEWCFKGEfmbxl6xukBylP2UOeaJC0GLFJtUYGUHKz8ezYpEo2-DZEJamZTlv1Xv6wjglVEpLmm8Y5yfBieqld35PXJysbIMOj2N5m8vY9h7sKynpduaDLoOA5cRZrSO1M2H62za3yZcaBNt3GMjrw4WcuUUGL0QCr803qMFC63S3KZLu9XoNgzxyvrIQu4bsYVqyvsB8_umEz90Isfpo7UzFR4fpCixC8acLX-iwvijik6PorFQBhksXb8IXRv3LJMp9T`,
+  heroBg:   '/images/hero.jpg',
+  product1: '/images/product1.jpg',
+  product2: '/images/product2.jpg',
+  product3: '/images/product3.jpg',
+  product4: '/images/product4.jpg',
+  wholesale: '/images/wholesale.jpg',
+  about:    '/images/about.jpg',
 } as const;
