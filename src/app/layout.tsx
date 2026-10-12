@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { EB_Garamond, Hanken_Grotesk } from "next/font/google";
 import { Navbar } from "@/components/organisms/Navbar";
 import { Footer } from "@/components/organisms/Footer";
+import { CartDrawer } from "@/components/organisms/CartDrawer";
+import { ReduxProvider } from "@/components/providers/ReduxProvider";
 import "./globals.css";
 
 const serif = EB_Garamond({
@@ -28,9 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${serif.variable} ${sans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-surface text-charcoal">
-        <Navbar />
-        <main className="flex flex-1 flex-col">{children}</main>
-        <Footer />
+        <ReduxProvider>
+          <Navbar />
+          <CartDrawer />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

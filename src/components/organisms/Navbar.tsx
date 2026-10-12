@@ -6,9 +6,13 @@ import { usePathname } from 'next/navigation';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { NAV_LINKS } from '@/constants/navigation';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { toggleCart, selectCartTotalItems } from '@/features/cart/cartSlice';
 
 export function Navbar() {
-  const pathname = usePathname();
+  const pathname    = usePathname();
+  const dispatch    = useAppDispatch();
+  const totalItems  = useAppSelector(selectCartTotalItems);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -76,13 +80,21 @@ export function Navbar() {
           </ul>
 
           {/* Derecha: carrito */}
-          <Link
-            href="/carrito"
+          <button
+            onClick={() => dispatch(toggleCart())}
             aria-label="Ver carrito"
-            className="text-on-surface transition-colors duration-300 ease-out hover:text-primary"
+            className="relative text-on-surface transition-colors duration-300 ease-out hover:text-primary"
           >
             <ShoppingBag size={22} strokeWidth={1.5} aria-hidden />
-          </Link>
+            {totalItems > 0 && (
+              <span
+                aria-label={`${totalItems} productos en el carrito`}
+                className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-tertiary font-sans text-[10px] font-bold text-on-tertiary"
+              >
+                {totalItems > 9 ? '9+' : totalItems}
+              </span>
+            )}
+          </button>
         </nav>
       </header>
 

@@ -16,6 +16,12 @@ vi.mock('next/link', () => ({
   ),
 }));
 
+vi.mock('react-redux', () => ({
+  useDispatch: () => vi.fn(),
+  useSelector: (selector: (s: unknown) => unknown) =>
+    selector({ cart: { items: [], isOpen: false } }),
+}));
+
 describe('Navbar', () => {
   it('renders the brand logo', () => {
     render(<Navbar />);
@@ -29,9 +35,9 @@ describe('Navbar', () => {
     });
   });
 
-  it('renders the cart link', () => {
+  it('renders the cart button', () => {
     render(<Navbar />);
-    expect(screen.getByRole('link', { name: 'Ver carrito' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Ver carrito' })).toBeInTheDocument();
   });
 
   it('renders the hamburger button', () => {
