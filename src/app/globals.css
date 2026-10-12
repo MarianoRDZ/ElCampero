@@ -1,54 +1,134 @@
 @import "tailwindcss";
 
-/* ─────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════
    DESIGN TOKENS — "Criollo Moderno"
-   Fuente de verdad del sistema visual.
-   Cualquier color, fuente o tamaño se toma de acá.
-───────────────────────────────────────────── */
+   Fuente de verdad absoluta del sistema visual.
+   Todo color, tamaño o espacio debe venir de acá.
+═══════════════════════════════════════════════════════════ */
 @theme {
-  /* Brand */
-  --color-primary:       #8B5E3C;
-  --color-primary-hover: #6B4728;
-  --color-primary-light: #A67B58;
 
-  /* Surfaces */
-  --color-surface:       #FDF9F0;
-  --color-surface-alt:   #F5EFE3;
-  --color-surface-dark:  #EDE4D4;
+  /* ── Primario ── */
+  --color-primary:              #6f4627;
+  --color-on-primary:           #ffffff;
+  --color-primary-container:    #8b5e3c;
+  --color-on-primary-container: #ffe3d1;
+  --color-inverse-primary:      #f4bb92;
+  --color-primary-fixed:        #ffdcc5;
+  --color-primary-fixed-dim:    #f4bb92;
+  --color-on-primary-fixed:     #301400;
 
-  /* Text */
-  --color-charcoal:      #1C1C16;
-  --color-muted:         #6B6B5E;
+  /* ── Secundario ── */
+  --color-secondary:              #5f5e5e;
+  --color-on-secondary:           #ffffff;
+  --color-secondary-container:    #e2dfde;
+  --color-on-secondary-container: #636262;
+  --color-secondary-fixed:        #e5e2e1;
+  --color-secondary-fixed-dim:    #c8c6c5;
+  --color-on-secondary-fixed:     #1b1b1b;
 
-  /* CTA */
-  --color-cta:           #9C1E14;
-  --color-cta-hover:     #7D1810;
+  /* ── Terciario (CTA — Fire Red) ── */
+  --color-tertiary:              #9c1e14;
+  --color-on-tertiary:           #ffffff;
+  --color-tertiary-container:    #be372a;
+  --color-on-tertiary-container: #ffe2dd;
+  --color-tertiary-fixed:        #ffdad5;
+  --color-tertiary-fixed-dim:    #ffb4a9;
+  --color-on-tertiary-fixed:     #410000;
 
-  /* Borders */
-  --color-border:        #DDD4C0;
-  --color-border-subtle: #EDE4D4;
+  /* ── Surface ── */
+  --color-surface:                   #fdf9f0;
+  --color-surface-dim:               #dddad1;
+  --color-surface-bright:            #fdf9f0;
+  --color-surface-container-lowest:  #ffffff;
+  --color-surface-container-low:     #f7f3ea;
+  --color-surface-container:         #f1eee5;
+  --color-surface-container-high:    #ece8df;
+  --color-surface-container-highest: #e6e2d9;
+  --color-surface-tint:              #805533;
+  --color-surface-variant:           #e6e2d9;
+  --color-on-surface:                #1c1c16;
+  --color-on-surface-variant:        #51443c;
+  --color-inverse-surface:           #31302b;
+  --color-inverse-on-surface:        #f4f0e7;
 
-  /* Feedback */
-  --color-success:       #2D6A4F;
-  --color-warning:       #B7791F;
-  --color-error:         #9C1E14;
+  /* ── Outline ── */
+  --color-outline:         #83746b;
+  --color-outline-variant: #d5c3b8;
 
-  /* Border radius */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   16px;
+  /* ── Background ── */
+  --color-background:    #fdf9f0;
+  --color-on-background: #1c1c16;
+
+  /* ── Error ── */
+  --color-error:              #ba1a1a;
+  --color-on-error:           #ffffff;
+  --color-error-container:    #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ── Escala tipográfica ── */
+  --text-display-lg:  4rem;      /* 64px */
+  --text-headline-lg: 3rem;      /* 48px */
+  --text-headline-md: 2rem;      /* 32px */
+  --text-headline-sm: 1.5rem;    /* 24px */
+  --text-body-lg:     1.125rem;  /* 18px */
+  --text-body-md:     1rem;      /* 16px */
+  --text-label-lg:    0.875rem;  /* 14px */
+  --text-label-sm:    0.75rem;   /* 12px */
+  /* mobile */
+  --text-headline-lg-mobile: 2.25rem;  /* 36px */
+
+  /* ── Line heights ── */
+  --leading-display-lg:  4.5rem;   /* 72px */
+  --leading-headline-lg: 3.5rem;   /* 56px */
+  --leading-headline-md: 2.5rem;   /* 40px */
+  --leading-headline-sm: 2rem;     /* 32px */
+  --leading-body-lg:     1.75rem;  /* 28px */
+  --leading-body-md:     1.5rem;   /* 24px */
+  --leading-label-lg:    1.25rem;  /* 20px */
+  --leading-label-sm:    1rem;     /* 16px */
+  --leading-headline-lg-mobile: 2.75rem;  /* 44px */
+
+  /* ── Letter spacing ── */
+  --tracking-display:  -0.02em;
+  --tracking-label:     0.05em;
+
+  /* ── Border radius ── */
+  --radius-sm:   0.25rem;  /* 4px  */
+  --radius:      0.5rem;   /* 8px  — rounded */
+  --radius-md:   0.75rem;  /* 12px */
+  --radius-lg:   1rem;     /* 16px */
+  --radius-xl:   1.5rem;   /* 24px */
   --radius-full: 9999px;
+
+  /* ── Spacing semántico ── */
+  --spacing-gutter:         1.5rem;   /* 24px */
+  --spacing-margin-desktop: 4rem;     /* 64px */
+  --spacing-margin-mobile:  1.25rem;  /* 20px */
+  --spacing-stack-sm:       0.75rem;  /* 12px */
+  --spacing-stack-md:       1.5rem;   /* 24px */
+  --spacing-stack-lg:       3rem;     /* 48px */
+  --spacing-stack-xl:       5rem;     /* 80px */
+
+  /* ── Sombras ── */
+  --shadow-card:    0 0 20px rgba(28, 28, 22, 0.05);
+  --shadow-popover: 0 4px 24px rgba(28, 28, 22, 0.08);
 }
 
-/* Fonts — referencia las variables de next/font */
+/* Fonts — referencia las variables CSS generadas por next/font */
 @theme inline {
   --font-sans:  var(--font-sans);
   --font-serif: var(--font-serif);
 }
 
-/* ─────────────────────────────────────────────
+/* ── Variables globales (fuera de @theme) ── */
+:root {
+  --container-max:   1280px;
+  --transition-base: 300ms ease-out;
+}
+
+/* ═══════════════════════════════════════════════════════════
    BASE
-───────────────────────────────────────────── */
+═══════════════════════════════════════════════════════════ */
 *,
 *::before,
 *::after {
@@ -61,14 +141,16 @@ html {
 }
 
 body {
-  background-color: var(--color-surface);
-  color: var(--color-charcoal);
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
 }
 
