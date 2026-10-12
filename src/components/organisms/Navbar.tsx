@@ -50,7 +50,7 @@ export function Navbar() {
             <Link
               href="/"
               aria-label="El Campero — inicio"
-              className="font-serif text-xl font-medium tracking-wider text-on-surface"
+              className="font-serif text-2xl font-semibold tracking-wider text-on-surface"
             >
               El Campero
             </Link>
@@ -66,7 +66,7 @@ export function Navbar() {
                     'text-label-lg font-semibold tracking-label transition-colors duration-300 ease-out',
                     pathname === href
                       ? 'text-primary'
-                      : 'text-on-surface-variant hover:text-on-surface',
+                      : 'text-outline hover:text-on-surface',
                   )}
                 >
                   {label}

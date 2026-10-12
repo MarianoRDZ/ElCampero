@@ -4,6 +4,7 @@ export type NavLink = {
 };
 
 export const NAV_LINKS: NavLink[] = [
+  { label: 'Inicio',     href: '/'           },
   { label: 'Productos',  href: '/productos'  },
   { label: 'Nosotros',   href: '/nosotros'   },
   { label: 'Mayoristas', href: '/mayoristas' },
