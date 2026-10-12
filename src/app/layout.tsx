@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Hanken_Grotesk } from "next/font/google";
+import { Navbar } from "@/components/organisms/Navbar";
 import "./globals.css";
 
 const serif = EB_Garamond({
@@ -26,7 +27,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${serif.variable} ${sans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-surface text-charcoal">
-        {children}
+        <Navbar />
+        <main className="flex flex-1 flex-col">{children}</main>
       </body>
     </html>
   );
