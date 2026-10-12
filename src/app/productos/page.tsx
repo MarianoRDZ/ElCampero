@@ -5,6 +5,8 @@ import { ProductCard } from '@/components/molecules/ProductCard';
 import { ProductFilters } from '@/components/organisms/ProductFilters';
 import { prisma } from '@/lib/prisma';
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: 'Productos | El Campero',
   description: 'Sets de asado artesanales en cuero. Fabricación propia, envíos a todo el país.',

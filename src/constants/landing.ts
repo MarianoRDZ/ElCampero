@@ -123,7 +123,8 @@ export const FAQ = [
 export const CONTACT = {
   headline: 'Estamos para ayudarte',
   body:     '¿Tenés alguna consulta sobre un producto o querés un presupuesto mayorista personalizado? Escribinos y te responderemos a la brevedad.',
-  email:    'contacto@elcampero.com',
-  whatsapp: '+54 11 1234-5678',
+  email:    'ventas@elcampero.com',
+  whatsapp: '+54 9 11 1234-5678',
   waHref:   'https://wa.me/elcampero',
+  showroom: 'Recoleta, Buenos Aires',
 } as const;

@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-cacheComponents: true,
+  cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '5mb',
+    },
+  },
   turbopack: {
     rules: {
       "*.css": {

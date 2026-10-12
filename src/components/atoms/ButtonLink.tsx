@@ -5,7 +5,8 @@ import {
   type ButtonVariant, type ButtonSize,
 } from './buttonStyles';
 
-interface ButtonLinkProps extends Omit<LinkProps, 'className'> {
+interface ButtonLinkProps
+  extends Omit<React.ComponentPropsWithoutRef<typeof Link>, 'className'> {
   variant?:   ButtonVariant;
   size?:      ButtonSize;
   className?: string;
