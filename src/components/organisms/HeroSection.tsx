@@ -44,7 +44,7 @@ export function HeroSection() {
             </Link>
             <Link
               href={HERO.ctaSecondary.href}
-              className="inline-flex h-14 items-center rounded border-2 border-on-primary px-8 font-sans text-label-lg font-semibold uppercase tracking-widest text-on-primary transition-all duration-300 ease-out hover:bg-white/10"
+              className="inline-flex h-14 items-center rounded border-2 border-white px-8 font-sans text-label-lg font-semibold uppercase tracking-widest text-white transition-all duration-300 ease-out hover:bg-white/10"
             >
               {HERO.ctaSecondary.label}
             </Link>
