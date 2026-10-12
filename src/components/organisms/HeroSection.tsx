@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { ButtonLink } from '@/components/atoms/ButtonLink';
 import { HERO } from '@/constants/landing';
 import { IMAGES } from '@/constants/images';
 
@@ -27,27 +27,21 @@ export function HeroSection() {
             {HERO.eyebrow}
           </span>
 
-          <h1 className="mb-stack-md font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile text-on-primary md:text-display-lg md:leading-display-lg md:tracking-display">
+          <h1 className="mb-stack-md font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile text-white md:text-display-lg md:leading-display-lg md:tracking-display">
             {HERO.headline}
           </h1>
 
-          <p className="mb-stack-lg max-w-lg font-sans text-body-lg leading-body-lg text-on-primary opacity-90">
+          <p className="mb-stack-lg max-w-lg font-sans text-body-lg leading-body-lg text-white opacity-90">
             {HERO.body}
           </p>
 
           <div className="flex flex-wrap gap-gutter">
-            <Link
-              href={HERO.ctaPrimary.href}
-              className="inline-flex h-14 items-center rounded px-8 font-sans text-label-lg font-semibold uppercase tracking-widest text-on-primary transition-transform duration-300 ease-out bg-primary-container hover:scale-105"
-            >
+            <ButtonLink href={HERO.ctaPrimary.href} variant="primary" size="lg">
               {HERO.ctaPrimary.label}
-            </Link>
-            <Link
-              href={HERO.ctaSecondary.href}
-              className="inline-flex h-14 items-center rounded border-2 border-white px-8 font-sans text-label-lg font-semibold uppercase tracking-widest text-white transition-all duration-300 ease-out hover:bg-white/10"
-            >
+            </ButtonLink>
+            <ButtonLink href={HERO.ctaSecondary.href} variant="ghost" size="lg">
               {HERO.ctaSecondary.label}
-            </Link>
+            </ButtonLink>
           </div>
 
         </div>

@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Mail, Phone, CheckCircle } from 'lucide-react';
+import { Button } from '@/components/atoms/Button';
+import { SectionHeading } from '@/components/atoms/SectionHeading';
+import { FormField, fieldClass } from '@/components/molecules/FormField';
 import { CONTACT } from '@/constants/landing';
 
 const schema = z.object({
@@ -13,13 +16,6 @@ const schema = z.object({
 });
 
 type FormValues = z.infer<typeof schema>;
-
-const inputClass = (hasError: boolean) =>
-  `w-full border-0 border-b-2 bg-transparent px-0 py-2 font-sans text-body-md text-on-surface placeholder:text-outline transition-colors duration-300 ease-out focus:outline-none ${
-    hasError
-      ? 'border-error focus:border-error'
-      : 'border-outline-variant/30 focus:border-primary'
-  }`;
 
 export function ContactSection() {
   const {
@@ -43,9 +39,9 @@ export function ContactSection() {
 
         {/* Info */}
         <div>
-          <h2 className="mb-stack-md font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:text-headline-lg md:leading-headline-lg">
+          <SectionHeading className="mb-stack-md">
             {CONTACT.headline}
-          </h2>
+          </SectionHeading>
           <p className="mb-stack-lg font-sans text-body-lg leading-body-lg text-on-surface-variant">
             {CONTACT.body}
           </p>
@@ -93,78 +89,53 @@ export function ContactSection() {
             noValidate
             className="space-y-6 rounded-xl bg-surface p-stack-lg shadow-card"
           >
-            {/* Nombre */}
-            <div>
-              <label htmlFor="contact-name" className="mb-2 block font-sans text-label-sm uppercase tracking-label text-on-surface-variant">
-                Nombre Completo
-              </label>
+            <FormField id="contact-name" label="Nombre Completo" error={errors.name?.message}>
               <input
                 id="contact-name"
                 type="text"
                 autoComplete="name"
                 placeholder="Tu nombre"
-                aria-describedby={errors.name ? 'error-name' : undefined}
+                aria-describedby={errors.name ? 'error-contact-name' : undefined}
                 aria-invalid={!!errors.name}
-                className={inputClass(!!errors.name)}
+                className={fieldClass(!!errors.name)}
                 {...register('name')}
               />
-              {errors.name && (
-                <p id="error-name" role="alert" className="mt-1 font-sans text-label-sm text-error">
-                  {errors.name.message}
-                </p>
-              )}
-            </div>
+            </FormField>
 
-            {/* Email */}
-            <div>
-              <label htmlFor="contact-email" className="mb-2 block font-sans text-label-sm uppercase tracking-label text-on-surface-variant">
-                Correo Electrónico
-              </label>
+            <FormField id="contact-email" label="Correo Electrónico" error={errors.email?.message}>
               <input
                 id="contact-email"
                 type="email"
                 autoComplete="email"
                 placeholder="email@ejemplo.com"
-                aria-describedby={errors.email ? 'error-email' : undefined}
+                aria-describedby={errors.email ? 'error-contact-email' : undefined}
                 aria-invalid={!!errors.email}
-                className={inputClass(!!errors.email)}
+                className={fieldClass(!!errors.email)}
                 {...register('email')}
               />
-              {errors.email && (
-                <p id="error-email" role="alert" className="mt-1 font-sans text-label-sm text-error">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
+            </FormField>
 
-            {/* Mensaje */}
-            <div>
-              <label htmlFor="contact-message" className="mb-2 block font-sans text-label-sm uppercase tracking-label text-on-surface-variant">
-                Mensaje
-              </label>
+            <FormField id="contact-message" label="Mensaje" error={errors.message?.message}>
               <textarea
                 id="contact-message"
                 rows={4}
                 placeholder="¿En qué podemos ayudarte?"
-                aria-describedby={errors.message ? 'error-message' : undefined}
+                aria-describedby={errors.message ? 'error-contact-message' : undefined}
                 aria-invalid={!!errors.message}
-                className={`resize-none ${inputClass(!!errors.message)}`}
+                className={`resize-none ${fieldClass(!!errors.message)}`}
                 {...register('message')}
               />
-              {errors.message && (
-                <p id="error-message" role="alert" className="mt-1 font-sans text-label-sm text-error">
-                  {errors.message.message}
-                </p>
-              )}
-            </div>
+            </FormField>
 
-            <button
+            <Button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full rounded-lg bg-on-surface py-4 font-sans text-label-lg font-semibold uppercase tracking-widest text-surface transition-opacity duration-300 ease-out hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              variant="dark"
+              size="lg"
+              isLoading={isSubmitting}
+              className="w-full"
             >
               {isSubmitting ? 'Enviando…' : 'Enviar Mensaje'}
-            </button>
+            </Button>
           </form>
         )}
 

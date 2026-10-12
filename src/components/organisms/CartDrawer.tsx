@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { X, ShoppingBag, Minus, Plus, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/cn';
+import { Button } from '@/components/atoms/Button';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import {
   selectCartItems,
@@ -14,10 +15,10 @@ import {
 } from '@/features/cart/cartSlice';
 
 export function CartDrawer() {
-  const dispatch  = useAppDispatch();
-  const isOpen    = useAppSelector(selectCartIsOpen);
-  const items     = useAppSelector(selectCartItems);
-  const total     = useAppSelector(selectCartTotalPrice);
+  const dispatch = useAppDispatch();
+  const isOpen   = useAppSelector(selectCartIsOpen);
+  const items    = useAppSelector(selectCartItems);
+  const total    = useAppSelector(selectCartTotalPrice);
 
   return (
     <>
@@ -71,20 +72,12 @@ export function CartDrawer() {
               {items.map((item) => (
                 <li key={item.id} className="flex gap-4">
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-surface-container">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      sizes="80px"
-                      className="object-cover"
-                    />
+                    <Image src={item.image} alt={item.name} fill sizes="80px" className="object-cover" />
                   </div>
 
                   <div className="flex flex-1 flex-col justify-between">
                     <div className="flex items-start justify-between gap-2">
-                      <p className="font-sans text-body-md font-semibold text-on-surface">
-                        {item.name}
-                      </p>
+                      <p className="font-sans text-body-md font-semibold text-on-surface">{item.name}</p>
                       <button
                         onClick={() => dispatch(removeItem(item.id))}
                         aria-label={`Eliminar ${item.name}`}
@@ -132,9 +125,9 @@ export function CartDrawer() {
                   ${total.toLocaleString('es-AR')}
                 </p>
               </div>
-              <button className="w-full rounded-lg bg-primary py-4 font-sans text-label-lg font-semibold uppercase tracking-widest text-on-primary transition-opacity duration-300 ease-out hover:opacity-90">
+              <Button variant="primary" size="lg" className="w-full">
                 Ir al checkout
-              </button>
+              </Button>
             </div>
           </>
         )}

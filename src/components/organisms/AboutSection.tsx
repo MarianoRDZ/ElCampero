@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { ABOUT } from '@/constants/landing';
 import { IMAGES } from '@/constants/images';
 
@@ -31,9 +32,9 @@ export function AboutSection() {
           <span className="mb-4 block font-sans text-label-lg font-semibold uppercase tracking-widest text-primary">
             {ABOUT.eyebrow}
           </span>
-          <h2 className="mb-stack-md font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:text-headline-lg md:leading-headline-lg">
+          <SectionHeading className="mb-stack-md">
             {ABOUT.headline}
-          </h2>
+          </SectionHeading>
           {ABOUT.paragraphs.map((p) => (
             <p key={p.slice(0, 30)} className="mb-stack-md font-sans text-body-lg leading-body-lg text-on-surface-variant last:mb-0">
               {p}

@@ -1,3 +1,4 @@
+import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { FAQ } from '@/constants/landing';
 
 export function FaqSection() {
@@ -7,9 +8,9 @@ export function FaqSection() {
       aria-label="Preguntas frecuentes"
     >
       <div className="mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
-        <h2 className="mb-stack-lg text-center font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:text-headline-lg md:leading-headline-lg">
+        <SectionHeading className="mb-stack-lg text-center">
           Preguntas Frecuentes
-        </h2>
+        </SectionHeading>
 
         <dl className="space-y-1">
           {FAQ.map(({ question, answer }) => (

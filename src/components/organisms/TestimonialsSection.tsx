@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { TESTIMONIALS } from '@/constants/landing';
 
 export function TestimonialsSection() {
@@ -9,12 +10,11 @@ export function TestimonialsSection() {
       className="bg-surface-container py-stack-xl overflow-hidden"
       aria-label="Testimonios de clientes"
     >
-      <h2 className="mb-stack-xl px-margin-mobile text-center font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:px-margin-desktop md:text-headline-lg md:leading-headline-lg">
+      <SectionHeading className="mb-stack-xl px-margin-mobile text-center md:px-margin-desktop">
         Lo que dicen nuestros clientes
-      </h2>
+      </SectionHeading>
 
       <div className="relative">
-        {/* fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-surface-container to-transparent" aria-hidden />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-surface-container to-transparent" aria-hidden />
 

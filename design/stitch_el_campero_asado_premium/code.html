@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#51443c",
+                    "on-background": "#1c1c16",
+                    "tertiary-container": "#be372a",
+                    "on-surface": "#1c1c16",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f7f3ea",
+                    "tertiary-fixed": "#ffdad5",
+                    "on-tertiary-fixed": "#410000",
+                    "on-secondary-container": "#636262",
+                    "on-primary-container": "#ffe3d1",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f1eee5",
+                    "surface-variant": "#e6e2d9",
+                    "on-primary": "#ffffff",
+                    "background": "#fdf9f0",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e6e2d9",
+                    "surface-bright": "#fdf9f0",
+                    "on-secondary-fixed-variant": "#474746",
+                    "secondary": "#5f5e5e",
+                    "on-tertiary-fixed-variant": "#8e130c",
+                    "on-primary-fixed": "#301400",
+                    "surface": "#fdf9f0",
+                    "inverse-on-surface": "#f4f0e7",
+                    "outline": "#83746b",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "inverse-surface": "#31302b",
+                    "error-container": "#ffdad6",
+                    "primary": "#6f4627",
+                    "outline-variant": "#d5c3b8",
+                    "surface-dim": "#dddad1",
+                    "on-primary-fixed-variant": "#653d1e",
+                    "tertiary": "#9c1e14",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#ffdcc5",
+                    "surface-container-high": "#ece8df",
+                    "on-tertiary-container": "#ffe2dd",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#805533",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed-dim": "#f4bb92",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#8b5e3c",
+                    "secondary-container": "#e2dfde",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#f4bb92"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-xl": "80px",
+                    "margin-mobile": "20px",
+                    "stack-md": "24px",
+                    "stack-sm": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-lg": "48px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-sm": ["EB Garamond"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-md": ["EB Garamond"],
+                    "label-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf9f0; /* Force background consistent with Organic Minimalism */
+        }
+        .card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(28, 28, 28, 0.04), 0 10px 10px -5px rgba(28, 28, 28, 0.03);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant/30 shadow-sm fixed top-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">EL CAMPERO</div>
+<div class="hidden md:flex items-center gap-stack-lg font-body-lg text-body-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Inicio</a>
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary pb-1 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Productos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Mayoristas</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Nosotros</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Contactos</a>
+</div>
+<button class="bg-primary-container text-on-primary hover:opacity-90 transition-all px-6 py-2 rounded-lg font-label-lg scale-95 active:opacity-80">
+                Comprar Ahora
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-stack-xl max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<section class="text-center mb-stack-xl">
+<span class="font-label-lg text-label-lg text-primary tracking-[0.2em] mb-stack-sm block">CALIDAD DE HERENCIA</span>
+<h1 class="font-headline-lg text-headline-lg mb-stack-md text-on-surface">Nuestra Colección</h1>
+<p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant">
+                Cada pieza de El Campero es el resultado de décadas de tradición artesanal. Forjamos el acero y trabajamos el cuero de manera manual, creando herramientas que están destinadas a durar toda una vida y contar su propia historia en cada asado.
+            </p>
+</section>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-stack-lg">
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-stack-md border-b border-outline-variant pb-2">CATEGORÍAS</h3>
+<ul class="space-y-stack-sm font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2 font-medium text-primary" href="#"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Ver Todo</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cuchillería</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tablas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sets Completos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Accesorios</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface mb-stack-md border-b border-outline-variant pb-2">ORDENAR POR</h3>
+<select class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary font-body-md py-2">
+<option>Novedades</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+</select>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="group bg-white card-shadow rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A macro close-up of a handmade Argentine Gaucho knife with a Damascus steel blade showing intricate wavy patterns. The handle is made of polished dark wood and silver detailing, resting on a textured raw leather surface. The lighting is warm and cinematic, emphasizing the metallic grain and the rich wood texture in a premium organic minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYBJ6cFfz4yZKPnqDMlaI4gVyNIsztHJfzayJ4A-q0LZ2sNIRfAQY3UuCdJuBveQ7in-3TZCQLMVUwIiKKlHql3xe9AL129KLK1BePL8ZjN782gOzq3YTGO3wrZrxLAEISWW5WA7EeY0LJaMrdSH2D9oiMOejhxBMAI0qf7r8vqi3vMztZXhr45icLNYqk-eGt4wPoZETCUCTkhT22aBfdXc3H9yPCug8m4kwUFqM5ZYNQV5iRx-PCRt_25I02RDHyT8nMwIY5CCW1"/>
+</div>
+<div class="p-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-unit block">CUCHILLERÍA</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Cuchillo Criollo de Acero Damasco</h2>
+<p class="font-body-lg text-body-lg text-primary font-bold mb-stack-md">ARS 85.000</p>
+<button class="w-full flex items-center justify-center gap-2 py-3 border-1.5 border-on-background border-[1.5px] rounded-lg font-label-lg hover:bg-on-background hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                                Consultar por WhatsApp
+                            </button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-white card-shadow rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A top-down view of a heavy, solid Algarrobo wood cutting board with deep natural grain and rich reddish-brown tones. Beside it, a sprig of rosemary and coarse sea salt are artfully scattered on a cream-colored parchment background. The atmosphere is sophisticated and rustic, with soft natural light creating gentle shadows that highlight the artisanal quality of the wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyyXwH2acH3tRoMGKWdH3DNaMRFYIaY3BuH7Mehnlq9IebK3IeS5CNV5WuEv9F3DwbRStiCqBjHV1iBETw_PeHD5c522b7hGgy0K7A_CJiXbAa8L0AL11D971oZw4sqh4iBPTd6L92O19CLcNtXmxJiwODWGdZv9R6COdV9q1bq2jf2oIwQa3e_OOXQWXien5QgDywvjv38NUEEfkG5UUvcc0Uv3XvPgZ-F8DQA5vgh6CgPiAb4OTnLzHTDgV7x36a0A96BZRkFkVQ"/>
+</div>
+<div class="p-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-unit block">TABLAS</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Tabla de Algarrobo Premium</h2>
+<p class="font-body-lg text-body-lg text-primary font-bold mb-stack-md">ARS 42.500</p>
+<button class="w-full flex items-center justify-center gap-2 py-3 border-1.5 border-on-background border-[1.5px] rounded-lg font-label-lg hover:bg-on-background hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                                Consultar por WhatsApp
+                            </button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group bg-white card-shadow rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional four-piece barbecue set featuring a stainless steel fork, spatula, tongs, and a carving knife, all with dark wood handles. They are neatly arranged inside a high-quality leather roll-up case. The scene is shot in a clean, minimalist studio environment with a beige and brown color palette that evokes a sense of inherited quality and technical elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3s0aUo-qUD8sForog5UR_2RWqQidoSeuI1SzxW2PeKVSnmagEngBnaxPaCeToVq4dGB2p5JSOssBH5FFLFPeMPcoj7ZF3TyBfuuVVjNPrDI6yxNOyadc3xjazTpgbcFwIHRbLgfkUL4jKlOZaqgppxULNcXw6K6b7btt0YCbUxuG9o7RmERv-tWxI8qb1hZGQFAM7_1qmRmWQCvT-Lf4ddYHTKErgeC33xoR1xe1BlEo8nPKPmlmlIgEoKLZeFgt3RG4EDYSyjzl_"/>
+</div>
+<div class="p-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-unit block">SETS COMPLETOS</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Set de Asado 4 Piezas</h2>
+<p class="font-body-lg text-body-lg text-primary font-bold mb-stack-md">ARS 110.000</p>
+<button class="w-full flex items-center justify-center gap-2 py-3 border-1.5 border-on-background border-[1.5px] rounded-lg font-label-lg hover:bg-on-background hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                                Consultar por WhatsApp
+                            </button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group bg-white card-shadow rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A premium stainless steel thermal tumbler wrapped in hand-stitched, thick brown cowhide leather with a visible artisanal weave. The tumbler sits on a clean wooden surface, surrounded by soft lighting that captures the texture of the leather patina and the cold gleam of the steel rim. The image conveys modern performance fused with Argentine criollo heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRDHJR4T_Xm9UQzYrsDTEqHbECSto87ARLq04NsoxWThNu1jnqk2UEEVrC3Jlrppafha5umhqtPZGnQA6zNO4wfPU18nsCTGxATY2e89H9Q1_9GlIyOEamSLJCBY9mSHHuKb5Do4pYh3s3f7aamZ2UEtDIbRkI2Zx9eMFz0oJ2qYDUj2zk0yRtIkPXbkYzbbxSqL5ie7p0UMJ-kTHBhiOcN7DI5UPQOiSPvb3zGyZeP3pIlPoiYinaHsRqhGhv8Gthv4W9ZiL0U1ys"/>
+</div>
+<div class="p-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-unit block">ACCESORIOS</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Vaso Térmico de Cuero</h2>
+<p class="font-body-lg text-body-lg text-primary font-bold mb-stack-md">ARS 28.900</p>
+<button class="w-full flex items-center justify-center gap-2 py-3 border-1.5 border-on-background border-[1.5px] rounded-lg font-label-lg hover:bg-on-background hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                                Consultar por WhatsApp
+                            </button>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group bg-white card-shadow rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-end, heavy-duty apron crafted from premium cognac-colored bovine leather. It features robust brass hardware and adjustable straps, hanging against a minimalist plaster wall. The lighting is focused and dramatic, highlighting the natural imperfections and high-quality grain of the leather, symbolizing the ultimate craftsman's garment for traditional barbecue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3gcEcQnX9vbpaSUO3vcGb7OEsHMze9-nES3PjFeND-Z_PeD3dahSHNC5XQlN1uRJv7Ba7Yo0qeIfbVi4Kf_odBrHe_F0SfY5ryL7fmcVm8QUagMKmHnOPzGgP59zSDA6GZXuqKuAFPXT_PrjJGg5qOY_hpvEPEwJitB3GM0c0m4mm3SkKJ_Wl-oWLvM7od1cGapO-kQ8h7izbC0LmLYfd9Q5wLl-OdKvjb3VpSDbOeVpG2LEugPfMpkKl65bRTdfXIJbifeL95CJy"/>
+</div>
+<div class="p-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-unit block">ACCESORIOS</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-unit">Delantal de Cuero Vacuno</h2>
+<p class="font-body-lg text-body-lg text-primary font-bold mb-stack-md">ARS 54.000</p>
+<button class="w-full flex items-center justify-center gap-2 py-3 border-1.5 border-on-background border-[1.5px] rounded-lg font-label-lg hover:bg-on-background hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+                                Consultar por WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-stack-xl">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto gap-stack-lg">
+<div class="space-y-stack-sm max-w-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface">EL CAMPERO</div>
+<p class="font-body-md text-on-surface-variant opacity-80">Forjando tradiciones, entregando excelencia. Nuestra pasión por el campo se traduce en cada detalle de nuestras creaciones.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-stack-lg">
+<div class="flex flex-col gap-unit">
+<span class="font-label-lg text-on-surface font-bold">REDES</span>
+<a class="font-label-lg text-on-surface-variant hover:text-on-surface underline transition-opacity opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="font-label-lg text-on-surface-variant hover:text-on-surface underline transition-opacity opacity-80 hover:opacity-100" href="#">Facebook</a>
+<a class="font-label-lg text-on-surface-variant hover:text-on-surface underline transition-opacity opacity-80 hover:opacity-100" href="#">WhatsApp</a>
+</div>
+<div class="flex flex-col gap-unit">
+<span class="font-label-lg text-on-surface font-bold">AYUDA</span>
+<a class="font-label-lg text-on-surface-variant hover:text-on-surface underline transition-opacity opacity-80 hover:opacity-100" href="#">Medios de Pago</a>
+<a class="font-label-lg text-on-surface-variant hover:text-on-surface underline transition-opacity opacity-80 hover:opacity-100" href="#">Términos y Condiciones</a>
+</div>
+</div>
+</div>
+<div class="w-full px-margin-desktop py-stack-sm border-t border-outline-variant/20 max-w-container-max mx-auto text-center md:text-left">
+<p class="font-label-lg text-label-lg text-on-surface-variant opacity-60">
+                © 2024 El Campero. Tradición Criolla en cada forja.
+            </p>
+</div>
+</footer>
+</body></html>

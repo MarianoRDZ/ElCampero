@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
+import { ButtonLink } from '@/components/atoms/ButtonLink';
+import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { WHOLESALE } from '@/constants/landing';
 import { IMAGES } from '@/constants/images';
 
@@ -16,9 +17,9 @@ export function WholesaleSection() {
           <span className="mb-4 block font-sans text-label-lg font-semibold uppercase tracking-widest text-primary-fixed">
             {WHOLESALE.eyebrow}
           </span>
-          <h2 className="mb-stack-md font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:text-headline-lg md:leading-headline-lg">
+          <SectionHeading className="mb-stack-md">
             {WHOLESALE.headline}
-          </h2>
+          </SectionHeading>
           <p className="mb-stack-lg font-sans text-body-lg leading-body-lg opacity-80">
             {WHOLESALE.body}
           </p>
@@ -32,12 +33,9 @@ export function WholesaleSection() {
             ))}
           </ul>
 
-          <Link
-            href={WHOLESALE.cta.href}
-            className="inline-flex h-14 items-center rounded bg-primary px-8 font-sans text-label-lg font-semibold uppercase tracking-widest text-on-primary transition-transform duration-300 ease-out hover:scale-105"
-          >
+          <ButtonLink href={WHOLESALE.cta.href} variant="primary" size="lg">
             {WHOLESALE.cta.label}
-          </Link>
+          </ButtonLink>
         </div>
 
         <div className="relative h-[400px] overflow-hidden rounded-xl lg:h-[500px]">
