@@ -1,21 +1,39 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import { SectionHeading } from '@/components/atoms/SectionHeading';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import { ProductFilters } from '@/components/organisms/ProductFilters';
-import { PRODUCTS, filterAndSort } from '@/constants/products';
+import { prisma } from '@/lib/prisma';
+
+export const metadata: Metadata = {
+  title: 'Productos | El Campero',
+  description: 'Sets de asado artesanales en cuero. Fabricación propia, envíos a todo el país.',
+};
 
 interface PageProps {
   searchParams: Promise<{ categoria?: string; orden?: string }>;
 }
 
-export const metadata = {
-  title: 'Productos | El Campero',
-  description: 'Sets de asado artesanales, cuchillos, tablas y accesorios. Fabricación propia.',
-};
-
 export default async function ProductosPage({ searchParams }: PageProps) {
   const { categoria = '', orden = 'novedades' } = await searchParams;
-  const products = filterAndSort(PRODUCTS, categoria, orden);
+
+  const products = await prisma.product.findMany({
+    where: {
+      available: true,
+      ...(categoria ? { category: categoria } : {}),
+    },
+    orderBy:
+      orden === 'precio-asc'  ? { price: 'asc'  } :
+      orden === 'precio-desc' ? { price: 'desc' } :
+      { createdAt: 'desc' },
+    include: {
+      images: {
+        where:   { color: 'chocolate' },
+        orderBy: { order: 'asc' },
+        take: 1,
+      },
+    },
+  });
 
   return (
     <div className="mx-auto max-w-[var(--container-max)] px-margin-mobile py-stack-xl md:px-margin-desktop">
@@ -41,10 +59,7 @@ export default async function ProductosPage({ searchParams }: PageProps) {
         </Suspense>
 
         {products.length > 0 ? (
-          <ul
-            className="grid flex-1 grid-cols-1 gap-gutter sm:grid-cols-2 lg:grid-cols-3"
-            role="list"
-          >
+          <ul className="grid flex-1 grid-cols-1 gap-gutter sm:grid-cols-2 lg:grid-cols-3" role="list">
             {products.map((product) => (
               <li key={product.id}>
                 <ProductCard product={product} />

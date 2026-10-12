@@ -1,14 +1,21 @@
 import Image from 'next/image';
 import { MessageCircle } from 'lucide-react';
+import type { Product, ProductImage } from '@prisma/client';
 import { ButtonLink } from '@/components/atoms/ButtonLink';
-import { type Product } from '@/constants/products';
+import { CATEGORY_LABELS } from '@/constants/products';
 import { CONTACT } from '@/constants/landing';
 
+type ProductWithImage = Product & { images: ProductImage[] };
+
+const PLACEHOLDER = '/images/products/set-asado-4.jpg';
+
 interface ProductCardProps {
-  product: Product;
+  product: ProductWithImage;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const imageUrl = product.images[0]?.url ?? PLACEHOLDER;
+
   const waHref = `${CONTACT.waHref}?text=${encodeURIComponent(
     `Hola! Me interesa el producto: ${product.name}`,
   )}`;
@@ -17,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <article className="group overflow-hidden rounded-xl bg-surface shadow-card transition-transform duration-300 ease-out hover:-translate-y-1">
       <div className="relative aspect-[4/5] overflow-hidden bg-surface-container">
         <Image
-          src={product.image}
+          src={imageUrl}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -27,13 +34,18 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="p-stack-md">
         <span className="mb-2 block font-sans text-label-sm uppercase tracking-label text-on-surface-variant">
-          {product.category.replace('-', ' ')}
+          {CATEGORY_LABELS[product.category] ?? product.category}
+          {product.variant && ` · ${product.variant}`}
         </span>
+
         <h2 className="mb-2 font-serif text-headline-sm font-medium leading-headline-sm text-on-surface">
           {product.name}
         </h2>
+
         <p className="mb-stack-md font-sans text-body-lg font-bold text-primary">
-          ARS {product.price.toLocaleString('es-AR')}
+          {product.price != null
+            ? `ARS ${product.price.toLocaleString('es-AR')}`
+            : 'Consultar precio'}
         </p>
 
         <ButtonLink
