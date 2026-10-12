@@ -2,25 +2,35 @@ import { Star } from 'lucide-react';
 import { TESTIMONIALS } from '@/constants/landing';
 
 export function TestimonialsSection() {
+  const items = [...TESTIMONIALS, ...TESTIMONIALS];
+
   return (
     <section
-      className="bg-surface-container py-stack-xl"
+      className="bg-surface-container py-stack-xl overflow-hidden"
       aria-label="Testimonios de clientes"
     >
-      <div className="mx-auto max-w-[var(--container-max)] px-margin-mobile md:px-margin-desktop">
-        <h2 className="mb-stack-xl text-center font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:text-headline-lg md:leading-headline-lg">
-          Lo que dicen nuestros clientes
-        </h2>
+      <h2 className="mb-stack-xl px-margin-mobile text-center font-serif text-headline-lg-mobile font-medium leading-headline-lg-mobile md:px-margin-desktop md:text-headline-lg md:leading-headline-lg">
+        Lo que dicen nuestros clientes
+      </h2>
 
-        <ul className="grid grid-cols-1 gap-gutter md:grid-cols-3" role="list">
-          {TESTIMONIALS.map(({ stars, body, author }) => (
+      <div className="relative">
+        {/* fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-surface-container to-transparent" aria-hidden />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-surface-container to-transparent" aria-hidden />
+
+        <ul
+          className="flex animate-marquee gap-gutter hover:[animation-play-state:paused] motion-reduce:animate-none"
+          role="list"
+          aria-label="Carrusel de reseñas"
+        >
+          {items.map(({ stars, body, author }, i) => (
             <li
-              key={author}
-              className="rounded-xl bg-surface p-8 shadow-card"
+              key={i}
+              className="w-[320px] shrink-0 rounded-xl bg-surface p-8 shadow-card"
             >
               <div className="mb-4 flex gap-1 text-tertiary" aria-label={`${stars} estrellas`}>
-                {Array.from({ length: stars }).map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} aria-hidden />
+                {Array.from({ length: stars }).map((_, j) => (
+                  <Star key={j} size={16} fill="currentColor" strokeWidth={0} aria-hidden />
                 ))}
               </div>
               <blockquote className="mb-stack-md font-sans text-body-md italic leading-body-md text-on-surface-variant">

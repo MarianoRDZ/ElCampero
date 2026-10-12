@@ -54,6 +54,51 @@ export const TESTIMONIALS = [
     body:   '"Excelente atención mayorista. El proceso fue muy simple y los productos llegaron impecables a mi local en Neuquén."',
     author: 'Mariana P., Neuquén',
   },
+  {
+    stars: 5,
+    body:   '"Los cuchillos tienen un filo impresionante y el mango es muy cómodo. Se nota que están hechos para durar toda una vida."',
+    author: 'Sebastián L., Rosario',
+  },
+  {
+    stars: 5,
+    body:   '"Lo regalé en un casamiento y fue el presente más comentado de la noche. Envolvieron todo perfecto, llegó como de joyería."',
+    author: 'Claudia R., Mendoza',
+  },
+  {
+    stars: 5,
+    body:   '"Tengo sets de otras marcas pero ninguno se compara. El acero inoxidable es de primera, ya lleva tres años de uso intenso."',
+    author: 'Gustavo T., Santa Fe',
+  },
+  {
+    stars: 5,
+    body:   '"Pedí personalización con el nombre de mi viejo y quedó espectacular. Lloró cuando lo vio, no exagero."',
+    author: 'Nicolás F., La Plata',
+  },
+  {
+    stars: 5,
+    body:   '"Como restaurante compramos al por mayor y la calidad es consistente en todos los sets. Muy recomendables para profesionales."',
+    author: 'Hernán V., Parrilla Don Julio',
+  },
+  {
+    stars: 5,
+    body:   '"El envío fue rapidísimo y el packaging protegió todo perfecto. El asador llegó como si lo hubieran enviado en mano."',
+    author: 'Florencia B., Tucumán',
+  },
+  {
+    stars: 5,
+    body:   '"Atención de diez. Me asesoraron para elegir el set adecuado para el presupuesto que tenía. Genuinamente querían ayudarme."',
+    author: 'Andrés M., Salta',
+  },
+  {
+    stars: 5,
+    body:   '"La madera de la tabla tiene un olor increíble y el acabado es impecable. Parece una obra de arte más que un utensilio."',
+    author: 'Patricia G., Mar del Plata',
+  },
+  {
+    stars: 5,
+    body:   '"Cuatro Navidades regalando El Campero a distintos familiares. Nunca me fallaron, siempre el mismo lujo y la misma emoción."',
+    author: 'Diego A., San Juan',
+  },
 ] as const;
 
 export const FAQ = [

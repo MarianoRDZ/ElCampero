@@ -112,7 +112,14 @@
   /* ── Sombras ── */
   --shadow-card:    0 0 20px rgba(28, 28, 22, 0.05);
   --shadow-popover: 0 4px 24px rgba(28, 28, 22, 0.08);
+
+  /* ── Animaciones ── */
+  --animate-marquee: marquee 55s linear infinite;
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 
 /* Fonts — referencia las variables CSS generadas por next/font */
 @theme inline {
